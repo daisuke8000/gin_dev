@@ -17,3 +17,6 @@
 
 # IDE Settings
 .idea
+
+# LOGfiles
+gin.log

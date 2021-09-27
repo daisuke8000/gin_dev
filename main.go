@@ -6,9 +6,12 @@ import (
 	"github.com/daisuke8000/gin_dev/middlewares"
 	"github.com/daisuke8000/gin_dev/service"
 	"github.com/gin-gonic/gin"
+	gindump "github.com/tpkeeper/gin-dump"
 	"io"
 	"os"
 )
+
+
 
 
 var (
@@ -24,11 +27,11 @@ func setupLogOutput(){
 
 func main(){
 	//server := gin.Default()
-
 	//custom
 	setupLogOutput()
 	server := gin.New()
-	server.Use(gin.Recovery(), middlewares.Logger())
+	server.Use(gin.Recovery(), middlewares.Logger(),
+		middlewares.BasicAuth(), gindump.Dump())
 
 	//GET
 	server.GET("/videos", func(ctx *gin.Context) {
@@ -48,6 +51,6 @@ func main(){
 	//})
 	err := server.Run(":8080")
 	if err != nil {
-		return 
+		return
 	}
 }

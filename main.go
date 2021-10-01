@@ -8,6 +8,7 @@ import (
 	"github.com/gin-gonic/gin"
 	gindump "github.com/tpkeeper/gin-dump"
 	"io"
+	"net/http"
 	"os"
 )
 
@@ -40,7 +41,12 @@ func main(){
 
 	//POST
 	server.POST("/videos", func(ctx *gin.Context){
-		ctx.JSON(200, videoController.Save(ctx))
+		err := videoController.Save(ctx)
+		if err != nil {
+			ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		}else{
+			ctx.JSON(http.StatusOK, gin.H{"message": "Video Input is Valid!!"})
+		}
 	})
 
 	//example

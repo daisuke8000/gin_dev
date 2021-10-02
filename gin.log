@@ -5,5 +5,13 @@
 [GIN-debug] GET    /videos                   --> main.main.func1 (5 handlers)
 [GIN-debug] POST   /videos                   --> main.main.func2 (5 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 - [01 Oct 21 09:11 JST] GET /videos 200 1.887744ms 
-127.0.0.1 - [01 Oct 21 09:11 JST] POST /videos 401 61.474µs 
+::1 - [02 Oct 21 11:15 JST] GET /videos 200 641.065µs 
+::1 - [02 Oct 21 11:15 JST] GET /videos 200 337.323µs 
+::1 - [02 Oct 21 11:15 JST] GET /videos 200 398.898µs 
+::1 - [02 Oct 21 11:15 JST] POST /videos 400 320.785µs 
+::1 - [02 Oct 21 11:15 JST] POST /videos 400 1.254895ms 
+::1 - [02 Oct 21 11:15 JST] POST /videos 400 149.534µs 
+::1 - [02 Oct 21 11:16 JST] POST /videos 400 164.724µs 
+::1 - [02 Oct 21 11:16 JST] POST /videos 400 217.135µs 
+::1 - [02 Oct 21 11:17 JST] POST /videos 400 132.162µs 
+::1 - [02 Oct 21 11:17 JST] POST /videos 200 263.963µs 
